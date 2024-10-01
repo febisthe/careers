@@ -1,0 +1,83 @@
+.blind { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); margin: -1px; } 
+.wrapper { position: relative; margin: 0 auto; padding-top: var(--header-height); min-height: 100%; } 
+.inner { max-width: 1408px; margin: 0 auto; padding: 0 104px 0; } 
+.hidden { overflow: hidden; } 
+
+/* 공통 CSS */
+.headline { font-size: 64px; line-height: 71px; letter-spacing: -0.64px; margin-bottom: 20px; font-weight: 500; } 
+.headline+.common-box { margin-bottom: 60px; } 
+
+.common-box .title-sm { padding-right: 30px; font-size: 22px; line-height: 32px; letter-spacing: -0.44px; font-weight: 600; } 
+.common-box .title { padding-right: 26px; line-height: 36px; font-size: 25px; letter-spacing: -0.5px; font-weight: 500; margin-top: 29px; display: inline-block; } 
+.common-box .txt { margin-top: 20px; font-size: 18px; line-height: 30px; letter-spacing: -0.36px; } 
+.common-box .txt-sm { margin-top: 16px; font-size: 14px; line-height: 24px; letter-spacing: -0.28px; } 
+.common-box .link-more { position: relative; display: inline-block; font-size: 14px; line-height: 18px; letter-spacing: -0.36px; font-weight: normal; vertical-align: top; } 
+.common-box .link-more::before { content:''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #000; } 
+.common-btn { display: flex; align-items: center; justify-content: flex-end; margin: 58px 0 16px; gap: 10px; } 
+.common-btn .prev { background-position: -187px -172px; width: 32px; height: 32px; } 
+.common-btn .next { background-position: -113px -172px; width: 32px; height: 32px; } 
+
+.swiper .swiper-button-disabled { opacity: 0.5; } 
+
+
+
+
+/* 라인 */
+.line { position: relative; padding: 0 6px; } 
+.line::before { content: ""; position: absolute; top: 3px; left: 4px; width: 1px; height: 12px; background-color: #000; } 
+
+
+
+
+/* 공통이미지 */
+.sc-teams .search-wrap2 .ico-search::before,
+.sc-teams .search-wrap2 .career-item .depth2 .item2::before,
+.sc-teams .search-wrap2 .career-item .depth1 .btn-title::before,
+.sc-support .link-support .ico-arrow,
+#footer .relate-area .btn-related::before,
+#footer .relate-area .btn-related::after,
+.common-btn .prev, 
+.common-btn .next,
+.sc-teams .search-area .icon-box::before,
+.sc-teams .content-wrap .col-left .count::before,
+#header .col-right .global .ko::after,
+#header .logo > a { background-image: url('../images/bg_pc.png'); background-size: 328px 205px; } 
+
+
+
+
+/* 미디어 쿼리 */
+@media (max-width:1229px){
+  .common-box br { display: none; } 
+}
+
+
+@media (max-width:1024px) {
+  .inner { padding: 0 50px 0; }   
+  .common-btn { display: none; padding-bottom: 46px; }  
+  .common-box .title-sm { padding-right: 20px; }  
+  .common-box .title { margin-top: 21px;} 
+ }
+
+
+@media (max-width:767px) {
+  /* 모바일 이미지 */
+  .sc-support .link-support .ico-arrow,
+  .common-btn .next,
+  .common-btn .prev{ background-image: url('../images/bg_mo.png'); background-size: 195px 181px; background-repeat: no-repeat; } 
+
+  .common-btn .next { background-position: -35px -90px; width: 30px; height: 30px; } 
+  .common-btn .prev { background-position: -165px -70px; width: 30px; height: 30px; } 
+  
+  .inner { padding: 0 22px; } 
+
+
+  .headline { margin-top: 59px; margin-bottom: 11px; font-size: 36px; line-height: 50px; letter-spacing: -0.7px; }  
+  .headline+.common-box { margin-bottom: 25px; }  
+  
+  .common-box .title { font-size: 18px; line-height: 28px; letter-spacing: -0.36px; }   
+  .common-box .title-sm { padding-right: 20px; margin-bottom: 9px; font-size: 16px; line-height: 26px; letter-spacing: -0.32px; }   
+  .common-box .link-interview { font-size: 12px; line-height: 22px; letter-spacing: -0.24px}  
+  .common-box .txt { margin-top: 3px; font-size: 14px; line-height: 26px; letter-spacing: -0.28px; }  
+  .common-btn { display: flex; margin:25px 0 0; padding-bottom: 0; } 
+}

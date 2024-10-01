@@ -1,0 +1,109 @@
+@import '../css/reset.css';
+@import '../css/common.css';
+@import '../css/font.css';
+
+
+/* 헤더 */
+#header { position: fixed; top: 0; left: 0; width: 100%; z-index: 2; background: #fff; } 
+#header .header-inner { display: flex; height: var(--header-height); max-width: 1920px; padding: 0 104px 0 98px; margin: 0 auto; } 
+#header .logo { display: flex; align-items: center; width: 223px; height: 100%; } 
+#header .logo > a { display: block; background-position: -105px 0px; width: 223px; height: 35px } 
+#header .gnb { display: flex; align-items: center; justify-content: space-between; margin-left: 29px; width: 100%; } 
+#header .gnb > * { display: flex; align-items: center; height: 100%; } 
+#header .gnb .depth1 { display: flex; height: 100%; } 
+#header .gnb .depth1 > li { height: 100%; padding: 0 10px; font-size: 17px; line-height: 32px; letter-spacing: -0.36px; } 
+#header .gnb .depth1 > li > a { display: flex; align-items: center; height: 100%; } 
+#header .gnb .depth1 > li > a:hover { text-decoration: underline; } 
+#header .gnb .global .ko { position: relative; height: 100%; } 
+#header .col-right .global .ko::after { content: ''; position: absolute; bottom: 30px; right: -20px; display: block; background-position: -122px -93px; width: 10px; height: 6px; } 
+#header .gnb .col-right .ko.on::after { transform: rotate(180deg); } 
+#header .col-right .global .lang { position: relative; } 
+#header .col-right .global .en { position: absolute; top: -20px; left: -10px; display: none; padding: 0 10px; background: #fff; } 
+#header .depth2 { position: absolute; left: 0; top: 100%; display: none; background: #fff; padding-bottom: 20px; padding-left: 360px; width: 100%; } 
+#header .gnb .depth2 li+li { padding-top: 10px; } 
+#header .gnb .depth2 li:hover { text-decoration: underline; } 
+#header .gnb .depth1 li:hover .depth2 { display: block; } 
+
+
+/* 푸터 */
+#footer { background-color: #f2f2f2; } 
+#footer .footer-inner { position: relative; padding: 25px 104px 25px 98px; } 
+#footer .logo-area .copy { font-size: 18px; line-height: 32px; letter-spacing: -0.32px; } 
+#footer .logo-area .policy { margin-left: 30px; font-size: 14px; line-height: 22px; letter-spacing: -0.28px; color: #909090; } 
+#footer .relate-area { position: absolute; top: 15px; right: 98px; width: 280px; line-height: 42px; } 
+#footer .relate-area .btn-related { position: relative; width: 100%; text-align: left; background-color: #f2f2f2; } 
+#footer .relate-area .btn-related::before { content:''; position: absolute; top: 20px; right: 0; width: 10px; height: 6px; z-index: 100; background-position: -122px -93px; } 
+#footer .relate-area .btn-related::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #000; } 
+#footer .relate-area .list-related { position: absolute; bottom: 42px; left: 0; display: none; width: 100%; padding: 0 12px; font-size: 18px; background: #fff; } 
+#footer .relate-area .btn-related.active::before { transform: rotate(180deg); right: 5px; } 
+#footer .relate-area .btn-related.active::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 0px; } 
+#footer .relate-area .btn-related.active { background: #fff; padding: 0 12px; width: 100%; } 
+#footer .family-area > ul { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; margin-top: 5px; } 
+#footer .family-area > ul > li { position: relative; margin: 0 20px 0 0; } 
+#footer .family-area > ul > li > a { display: block; font-size: 14px; line-height: 22px; letter-spacing: -0.28px; color: #909090; } 
+#footer .family-area > ul > li:not(:last-child) > a::before { content: ""; display: block; position: absolute; top: 50%; right: -10px; transform: translateY(-50%); width: 1px; height: 12px; background: #909090; } 
+
+
+/* 미디어 쿼리 */
+#header .btn-menu,
+#header .side-nav { display: none; } 
+
+@media (max-width:1229px){
+ #header .logo > a,
+ #header .btn-menu,
+ #header .btn-menu.close,
+ #header .list-side .side-item .ico-arrow { background-image: url('../images/bg_mo.png'); background-size: 195px 181px; background-repeat: no-repeat; } 
+
+ #header .gnb { display: none; } 
+ #header .ad-banner { display: none; } 
+ #header .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 0 22px; height: 60px; } 
+ #header .inner { padding: 0 22px; } 
+ #header .logo > a { width: 160px; height: 23px; background-position: 0px 0px; } 
+ #header .btn-menu { display: block; background-position: -85px -28px; width: 20px; height: 14px; } 
+ #header .btn-menu.close { background-position: -85px -49px; width: 15px; height: 15px; } 
+ #header .side-nav { display: block; position: fixed; right: 0; width: 100%; top: var(--header-height); height: calc(100vh - var(--header-height)); transform: translateX(100%); transition: transform .3s; background: #fff; z-index: 11; } 
+ #header .side-nav.on { transform: translateX(0);} 
+ #header .side-nav.hidden { transform: translateX(0);} 
+ #header .side-nav .list-side .side-item { position: relative; } 
+
+ /* 
+ 배경색이 안 들어간다!
+ #header .side-nav .list-side .side-item.on { background-color: #f2f2f2; } */
+
+ /* 사이드메뉴 팀을 클릭했을 때 돌아가는 화살표가 아무거나 눌러도 돌아간다! */
+
+ #header .list-side .side-item .ico-arrow { position: absolute; top: 0; left: 90px; content:''; display: block; margin: 20px 0 0 4px; background-position: -136px -49px; width: 10px; height: 6px; } 
+ #header .list-side .side-item .ico-arrow.down { transform: rotate(-180deg); } 
+ #header .list-side { position: relative; padding: 11px 0 9px; } 
+ #header .list-side:not(:first-child)::after { content: ""; position: absolute; top: 0; left: 22px; right: 22px; height: 1px; background-color: #d0d0d0; } 
+ #header .list-side > li { font-size: 22px; line-height: 46px; letter-spacing: -0.44px; } 
+ #header .list-side.language { padding-top: 19px; } 
+ #header .list-side.language > li { margin-bottom: 9px; font-size: 18px; letter-spacing: -0.36px; line-height: 28px; } 
+ #header .list-side.language > li:active { background: transparent; } 
+ #header .list-side input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); margin: -1px; } 
+ #header .list-side label::before { content: ""; margin: 8px 10px 0 0; display: inline-block; vertical-align: top; width: 10px; height: 10px; border-radius: 50%; border: 1px solid #d0d0d0; } 
+ #header .list-side input:checked+label::before { background: #000; } 
+ #header .list-sub { display: none; padding: 3px 22px 15px } 
+ #header .list-sub > li > a { padding-left: 20px; font-size: 18px; line-height: 28px; letter-spacing: -0.36px; } 
+ }
+
+
+
+
+@media (max-width: 767px){
+ #footer { padding: 25px 0 29px; } 
+ #footer .footer-inner { display: block; padding: 0 22px; } 
+ #footer .logo-area .copy { display: inline-block; font-size: 15px; line-height: 22px; letter-spacing: -0.3px; } 
+ #footer .relate-area { position: relative; left: 0; width: 100%; top: auto; right: auto; } 
+ #footer .relate-area .related-btn { font-size: 12px; } 
+ #footer .relate-area .related-list { width: 100%; font-size: 12px; color: #1d1d1d; } 
+ #footer .family-area { display: block; position: relative; width: 100%; } 
+ #footer .family-area > ul { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; position: relative; } 
+ #footer .family-area > ul > li { position: relative; margin: 0 20px 0 0; } 
+ #footer .family-area > ul > li > a { display: block; font-size: 14px; line-height: 22px; letter-spacing: -0.28px; color: #909090; } 
+}
+
+
+
+
+
